@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BinGenius AI</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="main-container">
+    <h1>BinGenius AI</h1>
+
+    <div class="core-display-area">
+      <div class="side-panel">
+        <h2>History</h2>
+        <ul id="history-log"></ul>
+        <button id="clearHistoryButton" type="button">Clear History</button>
+      </div>
+
+      <div class="webcam-panel">
+        <div class="button-group">
+          <button id="startButton" type="button" onclick="startDetection()" disabled>
+            Start
+          </button>
+          <button id="stopButton" type="button" onclick="stopDetection()" disabled>
+            Stop
+          </button>
+        </div>
+        <div id="webcam-container">
+          <span>Webcam feed will show here after starting.</span>
+        </div>
+        <div id="label-container">Loading model...</div>
+      </div>
+
+      <div class="side-panel">
+        <h2>Fun Fact</h2>
+        <div id="info-container"></div>
+      </div>
+    </div>
+
+    <div class="trash-grid">
+      <div class="trash-container" data-type="Hazardous and Toxic">
+        <img src="images/red-lid.png" alt="Lid" class="lid" />
+        <img src="images/red-body.png" alt="Body" class="trash-body" />
+      </div>
+      <div class="trash-container" data-type="Plastic">
+        <img src="images/yellow-lid.png" alt="Lid" class="lid" />
+        <img src="images/yellow-body.png" alt="Body" class="trash-body" />
+      </div>
+      <div class="trash-container" data-type="Metal">
+        <img src="images/purple-lid.png" alt="Lid" class="lid" />
+        <img src="images/purple-body.png" alt="Body" class="trash-body" />
+      </div>
+      <div class="trash-container" data-type="Paper">
+        <img src="images/blue-lid.png" alt="Lid" class="lid" />
+        <img src="images/blue-body.png" alt="Body" class="trash-body" />
+      </div>
+      <div class="trash-container" data-type="Textile">
+        <img src="images/gray-lid.png" alt="Lid" class="lid" />
+        <img src="images/gray-body.png" alt="Body" class="trash-body" />
+      </div>
+      <div class="trash-container" data-type="Glass">
+        <img src="images/orange-lid.png" alt="Lid" class="lid" />
+        <img src="images/orange-body.png" alt="Body" class="trash-body" />
+      </div>
+      <div class="trash-container" data-type="Organic">
+        <img src="images/green-lid.png" alt="Lid" class="lid" />
+        <img src="images/green-body.png" alt="Body" class="trash-body" />
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
